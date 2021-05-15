@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header,
+main{
+    padding: 1.5em;
+}
+
+header{
+    text-align: center;
+    color: #e4e4e4;
+    background: #11b;
+}
+
+header > h1 {
+    margin: .5em 0;
+}
+
+header > h1 > span {
+    margin-right: .5em;
+}
+
+header > h1 > span > svg{
+    scale: 1.5;
+    fill: #e4e4e4;
+}
+
+header > p > a {
+    text-decoration: none;
+    color: #aaf;
+}
+
+main{
+    text-align: center;
+}
+
+.general-country {
+    margin: .6em;
+}
+
+.card{
+    margin: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    flex: 1;
+}
+
+.card > * {
+    width: 100%;
+    padding: 2em;
+    color: #eee;
+}
+
+.cases,
+.recovered{
+    background: #55f;
+}
+
+.deaths{
+    background: #c55;
+}
+
+.cases-header,
+.deaths-header,
+.recovered-header{
+    color: #22f;
+}
+
+.cases > *,
+.deaths > *,
+.recovered > *{
+    padding: .5em;
+}
+
+@media only screen and (min-width: 769px) {
+    .card{
+        flex-direction: row;
+    }    
+}

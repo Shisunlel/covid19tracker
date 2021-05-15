@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.script{
+    display: none;
+}
+
 header,
 main{
     padding: 1.5em;

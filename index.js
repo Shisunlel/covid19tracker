@@ -16,13 +16,8 @@ async function fetchData(){
     return data;
 }
 
-const created = async () => {
-    const data = await fetchData();
-    return result = data
-}
-
 const updateData = async () => {
-    await created();
+    result = await fetchData();
     const data = result.Countries.filter(e => e.Country == 'Cambodia');
     generalCountry.innerText = data[0].Country;
     //covert data
@@ -44,7 +39,7 @@ function createDate(dateString){
     dayString = dayOfWeek[date.getDay()]
     day = date.getDate()
     day = addLeadingZero(day)
-    month = date.getMonth()
+    month = date.getMonth() + 1
     month = addLeadingZero(month)
     year = date.getFullYear()
     hour = date.getHours()
@@ -64,4 +59,5 @@ function addLeadingZero(input){
 }
 
 // run the first time
+document.querySelector('.script').style.display = 'block';
 updateData()

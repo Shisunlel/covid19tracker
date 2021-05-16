@@ -8,6 +8,12 @@
     display: none;
 }
 
+body{
+    background: #2b2b2b;
+    color: #e4e4e4;
+    transition: all .75;
+}
+
 header,
 main{
     padding: 1.5em;
@@ -60,13 +66,16 @@ main{
     color: #eee;
 }
 
-.cases,
-.recovered{
+.cases{
     background: #55f;
 }
 
 .deaths{
     background: #c55;
+}
+
+.recovered{
+    background: #55ff71;
 }
 
 .cases-header,
@@ -96,6 +105,13 @@ main{
 
 .search > *:placeholder-shown{
     text-transform: uppercase;
+}
+
+@media (prefers-color-scheme:light) {
+    body{
+        color: #2b2b2b;
+        background: #e4e4e4;
+    }
 }
 
 @media only screen and (min-width: 769px) {

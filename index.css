@@ -81,6 +81,18 @@ main{
     padding: .5em;
 }
 
+.recovered > :nth-child(2){
+   visibility: hidden;
+}
+
+.search{
+    max-width: 100%;
+}
+
+.search > *{
+    width: 100%;
+}
+
 @media only screen and (min-width: 769px) {
     .card{
         flex-direction: row;

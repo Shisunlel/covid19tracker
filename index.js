@@ -28,7 +28,9 @@ async function fetchData(countryName = "Cambodia") {
     .then((responses) => {
       return responses.json();
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+    });
   return res;
 }
 
@@ -48,13 +50,8 @@ async function fetchData(countryName = "Cambodia") {
 
 const updateData = async (e) => {
   reset();
-  if (!e) {
-    data = await fetchData();
-  } else {
-    data = await fetchData(e.target.value);
-  }
-
-  if (!data?.country.length > 0 || !data) {
+  e ? data = await fetchData(e.target.value) : data = await fetchData();
+  if(data == undefined){
     return (generalCountry.innerText = "Not Found");
   }
   generalCountry.innerText = data.country;
@@ -108,8 +105,12 @@ function reset() {
 // run the first time
 document.querySelector(".script").style.display = "block";
 updateData();
+
+let timeOut;
+
 search.addEventListener("input", (e) => {
-  setTimeout(() => {
+  clearTimeout(timeOut);
+  timeOut = setTimeout(() => {
     updateData(e);
   }, 2000);
 });

@@ -91,6 +91,11 @@ main{
 
 .search > *{
     width: 100%;
+    padding: 1ch;
+}
+
+.search > *:placeholder-shown{
+    text-transform: uppercase;
 }
 
 @media only screen and (min-width: 769px) {

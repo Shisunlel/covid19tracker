@@ -51,7 +51,7 @@ async function fetchData(countryName = "Cambodia") {
 const updateData = async (e) => {
   reset();
   e ? data = await fetchData(e.target.value) : data = await fetchData();
-  if(data == undefined){
+  if(data == undefined || e.target.value.length === 0){
     return (generalCountry.innerText = "Not Found");
   }
   generalCountry.innerText = data.country;

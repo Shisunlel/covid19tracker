@@ -1,4 +1,4 @@
-let result = "";
+// let result = "";
 const dayOfWeek = [
   "Sunday",
   "Monday",

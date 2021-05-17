@@ -54,9 +54,9 @@ const updateData = async (e) => {
   if (!e) {
     data = await fetchData();
   } else {
-    data = await fetchData(e.target.value);
+    data = await fetchData(e);
 
-    if (data == undefined || e.target.value.length === 0) {
+    if (data == undefined || e.length === 0) {
       return (generalCountry.innerText = "Not Found");
     }
   }
@@ -115,9 +115,9 @@ updateData();
 
 let timeOut;
 
-search.addEventListener("input", (e) => {
+search.addEventListener("input", function(){
   clearTimeout(timeOut);
   timeOut = setTimeout(() => {
-    updateData(e);
+    updateData(this.value);
   }, 2000);
 });

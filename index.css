@@ -43,6 +43,16 @@ header > p > a {
     color: #aaf;
 }
 
+#language{
+    border: 0;
+    outline: 0;
+    background: none;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
 main{
     text-align: center;
 }

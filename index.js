@@ -18,6 +18,12 @@ let newRecovered = document.querySelector(".recovered-new");
 let totalRecovered = document.querySelector(".recovered-total");
 
 const search = document.querySelector("#search");
+const language = document.querySelector("#language");
+const newTranslate = document.querySelectorAll(".new-translate");
+const totalTranslate = document.querySelectorAll(".total-translate");
+const caseHeader = document.querySelector(".cases-header");
+const deathHeader = document.querySelector(".deaths-header");
+const recoveredHeader = document.querySelector(".recovered-header");
 
 // let url = 'https://api.covid19api.com/summary';
 
@@ -115,9 +121,43 @@ updateData();
 
 let timeOut;
 
-search.addEventListener("input", function(){
+search.addEventListener("input", function () {
   clearTimeout(timeOut);
   timeOut = setTimeout(() => {
     updateData(this.value);
   }, 2000);
 });
+
+const resetText = () => {
+  caseHeader.innerText = "Cases";
+  deathHeader.innerText = "Deaths";
+  recoveredHeader.innerText = "Recovered";
+  newTranslate.forEach((e) => {
+    e.innerText = "New: ";
+  });
+  totalTranslate.forEach((e) => {
+    e.innerText = "Total: ";
+  });
+};
+
+const changeLanguage = function () {
+  const flag = "https://www.countryflags.io/kh/shiny/32.png";
+  const childrenSrc = this.children[0].src;
+  if (childrenSrc === flag) {
+    this.children[0].src = "https://www.countryflags.io/gb/shiny/32.png";
+    caseHeader.innerText = "ករណីឆ្លង";
+    deathHeader.innerText = "ករណីស្លាប់";
+    recoveredHeader.innerText = "ករណីជាសះស្បើយ";
+    newTranslate.forEach((e) => {
+      e.innerText = "ថ្មី: ";
+    });
+    totalTranslate.forEach((e) => {
+      e.innerText = "សរុប: ";
+    });
+    return;
+  }
+  this.children[0].src = flag;
+  resetText();
+};
+
+language.addEventListener("click", changeLanguage);

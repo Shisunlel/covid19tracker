@@ -5,4 +5,4 @@ A Covid Tracker made using `https://coronavirus-19-api.herokuapp.com`
 - english and khmer language switcher
 - device themes
 
-demo 👉 [here](hshisunlel.github.io/covid19tracker)
+demo 👉 [here](shisunlel.github.io/covid19tracker)
